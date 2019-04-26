@@ -4,22 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | LD44</title>
-    <link rel="shortcut icon" href="WebGL/LD44_WebGL/TemplateData/favicon.ico">
-    <link rel="stylesheet" href="WebGL/LD44_WebGL/TemplateData/style.css">
-    <script src="WebGL/LD44_WebGL/TemplateData/UnityProgress.js"></script>
-    <script src="WebGL/LD44_WebGL/Build/UnityLoader.js"></script>
+    <script src="WebGL/LD44_WebGl/Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "WebGL/LD44_WebGL/Build/LD44_WebGL.json", {onProgress: UnityProgress});
+      var gameInstance = UnityLoader.instantiate("gameContainer", "WebGL/LD44_WebGl/Build/WebGL.json");
     </script>
   </head>
   <body>
-    <div class="webgl-content">
-      <div id="unityContainer" style="width: 960px; height: 600px"></div>
-      <div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
-        <div class="title">LD44</div>
-      </div>
-    </div>
+    <div id="gameContainer" style="width: 1280px; height: 720px; margin: auto"></div>
   </body>
 </html>
