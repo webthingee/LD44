@@ -16,11 +16,16 @@ public class PointerMaster : MonoBehaviour
         _lineRenderer = GetComponent<LineRenderer>();
     }
 
+    public Vector2 FloorUnderFoot(Transform pos)
+    {
+        return GetFloorPoint(pos.position);
+    }
+
     private void Update()
     {
         // center on mouse
         var pos = Input.mousePosition;
-        pos.z = 10;
+        pos.z = 20;
         pos = Camera.main.ScreenToWorldPoint(pos);
         transform.position = pos;
 
@@ -43,11 +48,11 @@ public class PointerMaster : MonoBehaviour
             }
         }
         
-        FloorPointEvent OnGameObjectHover = new FloorPointEvent
-        {
-            description = "Unit " + gameObject.name + " Health Event.", 
-            obj = _objUnderPoint
-        };
+//        FloorPointEvent OnGameObjectHover = new FloorPointEvent
+//        {
+//            description = "Unit " + gameObject.name + " Health Event.", 
+//            obj = _objUnderPoint
+//        };
     }
 
     private void DisplayFloorLine (Vector3 _startingPoint, Vector3 _floorPoint)
@@ -60,13 +65,14 @@ public class PointerMaster : MonoBehaviour
         _lineRenderer.startWidth = 0.05f;
 
         _lineRenderer.enabled = _startingPoint != _floorPoint;
+        _lineRenderer.enabled = _startingPoint != Vector3.zero;
     }
 
     public Vector3 GetFloorPoint(Vector3 _startingPoint)
     {
         var rayStart = _startingPoint;
         var rayDir = Vector2.down;
-        float rayDist = 10.0f;
+        float rayDist = 20.0f;
 
         Vector2 floorPosition = Vector2.zero;
         

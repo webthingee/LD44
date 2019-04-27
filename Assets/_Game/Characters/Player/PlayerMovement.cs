@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 	public float inAirDamping = 5f;
 	
 	private Vector2 floorPoint;
-	private Vector2 gotoFloorPoint;
+	public Vector2 gotoFloorPoint;
 
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
@@ -36,6 +36,11 @@ public class PlayerMovement : MonoBehaviour
 		FloorPointEvent.RegisterListener(OnFloorPointEvent);
 	}
 
+	private void Start()
+	{
+		gotoFloorPoint = FindObjectOfType<PointerMaster>().FloorUnderFoot(transform);
+	}
+
 	#region Event Listeners
 
 	void onControllerCollider( RaycastHit2D hit )
@@ -52,12 +57,20 @@ public class PlayerMovement : MonoBehaviour
 	void onTriggerEnterEvent( Collider2D col )
 	{
 		Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
+		if (col.CompareTag("Lift"))
+		{
+			transform.parent = col.transform.parent.parent.transform;
+		}
 	}
 
 
 	void onTriggerExitEvent( Collider2D col )
 	{
 		Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
+		if (col.CompareTag("Lift"))
+		{
+			transform.parent = null;
+		}
 	}
 
 	#endregion

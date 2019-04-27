@@ -62,7 +62,7 @@ public class Interactable : MonoBehaviour
         Debug.Log("Stop Using");
     }
 
-    public void PowerLevelCheck()
+    protected virtual void PowerLevelCheck()
     {
         Debug.Log("powerCheck");
         if (FindObjectOfType<PlayerPower>().PlayerPowerLevel >= powerReqiured)
