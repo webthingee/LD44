@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PauseMenu : MonoBehaviour
-{
+public class PauseMenu : MonoBehaviour {
 
     public GameObject menuHolder;
+    public GameObject mainBG;
+    public GameObject instructionsBG;
     public bool isPaused;
 
-    void Start()
-    {
+    void Start() {
         // Ensure pause menu is inactive at start
         if (menuHolder.activeInHierarchy) {
             menuHolder.SetActive(false);
@@ -19,11 +19,12 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    void Update()
-    {
+    void Update() {
         if (Input.GetButtonUp("Cancel")) {
-            if (!isPaused)
+            if (!isPaused) {
                 Pause();
+                ShowMainScreen();
+            }
             else
                 Resume();
         }
@@ -40,6 +41,16 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         menuHolder.SetActive(false);
         isPaused = false;
+    }
+
+    public void ShowMainScreen() {
+        mainBG.SetActive(true);
+        instructionsBG.SetActive(false);
+    }
+
+    public void ShowInstructions() {
+        instructionsBG.SetActive(true);
+        mainBG.SetActive(false);
     }
 
     public void Restart() {
