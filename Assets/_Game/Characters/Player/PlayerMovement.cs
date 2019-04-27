@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using MyEvents;
 using Prime31;
 
@@ -10,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
 	public float runSpeed = 8f;
 	public float groundDamping = 20f; // how fast do we change direction? higher means faster
 	public float inAirDamping = 5f;
-	public float jumpHeight = 3f;
 	
 	private Vector2 floorPoint;
 	private Vector2 gotoFloorPoint;
@@ -64,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
 
 	#endregion
 
-
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
 	{		
@@ -80,8 +77,6 @@ public class PlayerMovement : MonoBehaviour
 			
 		if (Mathf.Abs(transform.position.x - gotoFloorPoint.x) > 0.3f)
 		{
-
-
 			if (transform.position.x - gotoFloorPoint.x > 0.2f)
 			{
 				normalizedHorizontalSpeed = -1;
@@ -102,7 +97,6 @@ public class PlayerMovement : MonoBehaviour
 		else
 		{
 			normalizedHorizontalSpeed = 0;
-			Debug.Log("no speed" + _velocity.y);
 		}
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
@@ -112,11 +106,10 @@ public class PlayerMovement : MonoBehaviour
 		// apply gravity before moving
 		_velocity.y += gravity * Time.deltaTime;
 
+		// over write vertical velocity
 		if (normalizedHorizontalSpeed == 0) _velocity.y = 0;
 		
 		_controller.move( _velocity * Time.deltaTime );
-
-		Debug.Log(_velocity.y);
 
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;

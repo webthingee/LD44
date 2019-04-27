@@ -1,4 +1,5 @@
 ﻿using MyEvents;
+using TMPro;
 using UnityEngine;
 
 public class PointerMaster : MonoBehaviour
@@ -6,6 +7,9 @@ public class PointerMaster : MonoBehaviour
     public LayerMask floorLayer;
 
     private LineRenderer _lineRenderer;
+    [SerializeField] private TextMeshProUGUI _mousePositionText;
+    private Vector2 _mousePosition;
+    private GameObject _objUnderPoint;
 
     private void Awake()
     {
@@ -20,10 +24,33 @@ public class PointerMaster : MonoBehaviour
         pos = Camera.main.ScreenToWorldPoint(pos);
         transform.position = pos;
 
+        ObjectUnderPointer();
+
         DisplayFloorLine(transform.position, GetFloorPoint(transform.position));
     }
 
-    void DisplayFloorLine (Vector3 _startingPoint, Vector3 _floorPoint)
+    private void ObjectUnderPointer()
+    {        
+        _mousePositionText.text = "";
+        
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 0.001f);
+        if (hits.Length > 0)
+        {
+            foreach (Collider2D hit in hits)
+            {
+                _objUnderPoint = hit.gameObject;
+                _mousePositionText.text = hit.name;
+            }
+        }
+        
+        FloorPointEvent OnGameObjectHover = new FloorPointEvent
+        {
+            description = "Unit " + gameObject.name + " Health Event.", 
+            obj = _objUnderPoint
+        };
+    }
+
+    private void DisplayFloorLine (Vector3 _startingPoint, Vector3 _floorPoint)
     {
         Vector3[] positions = new Vector3[2];
         positions[0] = _startingPoint;
