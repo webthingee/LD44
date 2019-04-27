@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DoorInteractable : Interactable
 {
@@ -25,10 +26,22 @@ public class DoorInteractable : Interactable
         }
         else
         {
-            Debug.Log("asdf");
-            FindObjectOfType<PlayerPower>().transform.position = otherDoor.transform.position;
-            FindObjectOfType<PlayerMovement>().gotoFloorPoint = otherDoor.transform.position;
-            
+            StartCoroutine(StartCutScene());
         }
+    }
+    
+    public IEnumerator StartCutScene()
+    {
+        Debug.Log("Playing Cutscene...");
+        yield return new WaitForSeconds(1f);
+        FindObjectOfType<PlayerPower>().transform.position = otherDoor.transform.position;
+        FindObjectOfType<PlayerMovement>().gotoFloorPoint = otherDoor.transform.position;
+        yield return new WaitForSeconds(1f);
+        ReturnFromCutScene();
+    }
+    
+    public void ReturnFromCutScene()
+    {
+        Camera.main.transform.position = new Vector3(20f, -4.2f, -10f);
     }
 }

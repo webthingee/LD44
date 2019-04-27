@@ -5,10 +5,14 @@ using UnityEngine;
 public class LiftMover : MonoBehaviour
 {
     public Transform target;
+    public bool moveLift;
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.position, 2f * Time.deltaTime);
+        if (moveLift)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.position, 2f * Time.deltaTime);
+        }
     }
 }
