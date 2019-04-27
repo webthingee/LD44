@@ -9,9 +9,6 @@ public class Interactable : MonoBehaviour
     [SerializeField] private bool inUse;
     [SerializeField] public bool inProgress;
 
-    public Transform newPos;
-
-
     public bool InUse
     {
         set
@@ -70,8 +67,6 @@ public class Interactable : MonoBehaviour
             inProgress = false;
             isUnlocked = true;
             FindObjectOfType<PlayerPower>().PlayerPowerLevel -= powerReqiured;
-            transform.parent.position = newPos.position;
-            transform.parent.rotation = newPos.rotation;
         }
     }
 }

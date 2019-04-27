@@ -7,19 +7,25 @@ public class DoorInteractable : Interactable
     
     protected override void PowerLevelCheck()
     {
-        Debug.Log("powerCheck");
-        if (FindObjectOfType<PlayerPower>().PlayerPowerLevel >= powerReqiured)
+        if (otherDoor == null)
         {
-            inProgress = false;
-            isUnlocked = true;
-            FindObjectOfType<PlayerPower>().PlayerPowerLevel -= powerReqiured;
+            if (FindObjectOfType<PlayerPower>().PlayerPowerLevel >= powerReqiured)
+            {
+                inProgress = false;
+                isUnlocked = true;
+                FindObjectOfType<PlayerPower>().PlayerPowerLevel -= powerReqiured;
 
             
 
-            GetComponent<SpriteRenderer>().color = Color.green;
-            door.GetComponent<SpriteRenderer>().color = Color.green;
-            //otherDoor.GetComponent<SpriteRenderer>().color = Color.green;
+                GetComponent<SpriteRenderer>().color = Color.green;
+                door.GetComponent<SpriteRenderer>().color = Color.green;
 
+                door.GetComponent<DoorInteractable>().canUse = true;
+            }
+        }
+        else
+        {
+            Debug.Log("asdf");
             FindObjectOfType<PlayerPower>().transform.position = otherDoor.transform.position;
             FindObjectOfType<PlayerMovement>().gotoFloorPoint = otherDoor.transform.position;
             
