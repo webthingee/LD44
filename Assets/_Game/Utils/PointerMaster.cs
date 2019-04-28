@@ -7,7 +7,7 @@ public class PointerMaster : MonoBehaviour
     public LayerMask floorLayer;
 
     private LineRenderer _lineRenderer;
-    [SerializeField] private TextMeshProUGUI _mousePositionText;
+    [SerializeField] private TextMeshProUGUI _mousePositionText; // it is being used silly unity
     private Vector2 _mousePosition;
     private GameObject _objUnderPoint;
 
