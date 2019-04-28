@@ -1,6 +1,7 @@
 ﻿using MyEvents;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PointerMaster : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class PointerMaster : MonoBehaviour
     }
 
     private void Update()
-    {
+    {        
         // center on mouse
         var pos = Input.mousePosition;
         pos.z = 20;
@@ -82,7 +83,7 @@ public class PointerMaster : MonoBehaviour
         float rayDist = 20.0f;
 
         Vector2 floorPosition = Vector2.zero;
-        
+                
         RaycastHit2D hit = Physics2D.Raycast(rayStart, rayDir, rayDist, floorLayer); //1 << LayerMask.NameToLayer("Enemy"));
         if (hit)
         {

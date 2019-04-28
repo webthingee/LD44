@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using MyEvents;
 using Prime31;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -79,7 +80,8 @@ public class PlayerMovement : MonoBehaviour
 	void Update()
 	{		
 		if (Input.GetMouseButtonUp(0))
-		{
+		{			
+			if (EventSystem.current.IsPointerOverGameObject()) return;
 			if (floorPoint != null) gotoFloorPoint = floorPoint;
 		}
 
