@@ -8,6 +8,8 @@ public class Interactable : MonoBehaviour
     public bool canUse;
     [SerializeField] private bool inUse;
     [SerializeField] public bool inProgress;
+    
+    public bool cutSceneInProgress;
 
     public bool InUse
     {

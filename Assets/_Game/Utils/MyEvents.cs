@@ -44,6 +44,12 @@ namespace MyEvents
         public Vector2 floorPoint;
     }
     
+    public class CutSceneInfo : Event<CutSceneInfo>
+    {
+        public GameObject obj;
+        public string cutSceneName;
+    }
+    
     //Examples
 //    public class UnitHealthEvent : Event<UnitHealthEvent>
 //    {
