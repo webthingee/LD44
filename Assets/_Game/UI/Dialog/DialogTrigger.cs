@@ -19,6 +19,11 @@ public class DialogTrigger : MonoBehaviour
     IEnumerator Say()
     {
         wasSaid = true;
+
+        foreach (var v in FindObjectsOfType<DialogMultiTrigger>())
+        {
+            v.isSpeaking = false;
+        }
         
         yield return StartCoroutine(dm.Say(dialog));
         

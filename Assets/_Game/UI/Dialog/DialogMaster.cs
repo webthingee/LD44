@@ -9,15 +9,15 @@ public class DialogMaster : MonoBehaviour
     public GameObject dialogPanel;
     public TextMeshProUGUI dialogText;
     public Sprite ktSprite;
+    public Sprite zdSprite;
 
     public bool showNext;
 
-    public IEnumerator Say(string say)
+    public IEnumerator Say(string say, int charNumber = 1)
     {
         OpenDialog();
 
-        // may change based on a var passed
-        // dialogPanel.GetComponent<Image>().sprite = ktSprite;
+        dialogPanel.GetComponent<Image>().sprite = charNumber == 1 ? ktSprite : zdSprite;
         
         dialogText.text = say;
 
