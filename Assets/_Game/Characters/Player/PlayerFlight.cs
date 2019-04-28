@@ -9,13 +9,10 @@ public class PlayerFlight : MonoBehaviour
     public Vector3 moveToPoint;
     public bool inFlight = true;
 
-    public IEnumerator rocketPowerUse;
-
     private void Start()
     {
-        rocketPowerUse = RocketPowerUse();
         moveToPoint = transform.position;
-        StartCoroutine(rocketPowerUse);
+        StartCoroutine(RocketPowerUse());
     }
 
     private void OnEnable()
@@ -54,14 +51,18 @@ public class PlayerFlight : MonoBehaviour
         while (inFlight)
         {
             FindObjectOfType<PlayerPower>().PlayerPowerLevel -= 1;
-            yield return new WaitForSeconds(3f);
+
+            Debug.Log(FindObjectOfType<PlayerPower>().PlayerPowerLevel);
 
             if (FindObjectOfType<PlayerPower>().PlayerPowerLevel <= 0)
             {
                 Debug.Log("End Of Game");
+                this.enabled = false;
                 inFlight = false;
                 yield break;
             }
+            
+            yield return new WaitForSeconds(3f);
         }
         
         yield return new WaitForSeconds(0.1f);
