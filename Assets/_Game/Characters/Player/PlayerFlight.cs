@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class PlayerFlight : MonoBehaviour
 {
     public Transform target;
     public Vector3 moveToPoint;
+    public bool inFlight = true;
+
+    public IEnumerator rocketPowerUse;
 
     private void Start()
     {
+        rocketPowerUse = RocketPowerUse();
         moveToPoint = transform.position;
+        StartCoroutine(rocketPowerUse);
     }
 
     private void OnEnable()
@@ -30,17 +36,34 @@ public class PlayerFlight : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, moveToPoint, 2f * Time.deltaTime);
         }
 
-        if (transform.position.y >= 0f)
+        if (transform.position.y >= -3f)
         {
             Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 0, -10f);
         }
         //@todo needs fallback
         
-        if (transform.position.x <= 19f)
+        if (transform.position.x <= 20f)
         {
             Camera.main.transform.position = new Vector3(10f, 0, -10f);
         }
         //@todo needs fallback
+    }
 
+    IEnumerator RocketPowerUse()
+    {
+        while (inFlight)
+        {
+            FindObjectOfType<PlayerPower>().PlayerPowerLevel -= 1;
+            yield return new WaitForSeconds(3f);
+
+            if (FindObjectOfType<PlayerPower>().PlayerPowerLevel <= 0)
+            {
+                Debug.Log("End Of Game");
+                inFlight = false;
+                yield break;
+            }
+        }
+        
+        yield return new WaitForSeconds(0.1f);
     }
 }

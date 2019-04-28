@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogMaster : MonoBehaviour
 {
     public GameObject dialogPanel;
     public TextMeshProUGUI dialogText;
+    public Sprite ktSprite;
 
     public bool showNext;
 
     public IEnumerator Say(string say)
     {
         OpenDialog();
+
+        // may change based on a var passed
+        // dialogPanel.GetComponent<Image>().sprite = ktSprite;
         
         dialogText.text = say;
 

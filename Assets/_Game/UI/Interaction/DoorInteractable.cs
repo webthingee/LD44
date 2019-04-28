@@ -47,7 +47,7 @@ public class DoorInteractable : Interactable
 
         yield return new WaitForSeconds(0.25f);
         
-        Camera.main.transform.position = new Vector3(20f, -4.2f, -10f);
+        Camera.main.transform.position = new Vector3(19f, -7f, -10f);
         FindObjectOfType<PlayerPower>().transform.position = otherDoor.transform.position;
         FindObjectOfType<PlayerMovement>().gotoFloorPoint = otherDoor.transform.position;
 

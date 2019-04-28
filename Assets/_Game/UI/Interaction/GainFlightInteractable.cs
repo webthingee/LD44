@@ -1,11 +1,7 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GainFlightInteractable : Interactable
-{
-    //public GameObject door;
-    //public GameObject destination;
-    
+{   
     protected override void PowerLevelCheck()
     {
         Debug.Log("powerCheck");
@@ -15,8 +11,11 @@ public class GainFlightInteractable : Interactable
             isUnlocked = true;
 
             FindObjectOfType<PlayerFlight>().enabled = true;
-            GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().gravityScale = 0;
+            transform.parent.parent = GameObject.FindWithTag("Player").transform;
 
+            GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().gravityScale = 0;
+            GameObject.FindWithTag("Player").GetComponent<BoxCollider2D>().offset = new Vector2(1f, 0.5f);
+            GameObject.FindWithTag("Player").GetComponent<BoxCollider2D>().size = new Vector2(3f, 1f);
         }
     }
 }

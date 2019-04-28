@@ -43,7 +43,7 @@ public class PointerMaster : MonoBehaviour
         else
         {
             DisplayFloorLine(transform.position, FindObjectOfType<PlayerFlight>().transform.position); 
-            spriteRenderer.sprite = cursors[1];
+            spriteRenderer.sprite = cursors[2];
         }
         
         ObjectUnderPointer();
