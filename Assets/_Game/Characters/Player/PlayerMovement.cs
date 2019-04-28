@@ -57,21 +57,21 @@ public class PlayerMovement : MonoBehaviour
 
 	void onTriggerEnterEvent( Collider2D col )
 	{
-		Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
-		if (col.CompareTag("Lift"))
-		{
-			transform.parent = col.transform.parent.parent.transform;
-		}
+//		Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
+//		if (col.CompareTag("Lift"))
+//		{
+//			transform.parent = col.transform.parent.parent.transform;
+//		}
 	}
 
 
 	void onTriggerExitEvent( Collider2D col )
 	{
-		Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
-		if (col.CompareTag("Lift"))
-		{
-			transform.parent = null;
-		}
+//		Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
+//		if (col.CompareTag("Lift"))
+//		{
+//			transform.parent = null;
+//		}
 	}
 
 	#endregion

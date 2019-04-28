@@ -1,7 +1,6 @@
 ﻿using MyEvents;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class PointerMaster : MonoBehaviour
 {
