@@ -8,7 +8,7 @@ public class PlayerPower : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(PlayerPowerLevel);
+        var a = PlayerPowerLevel;
     }
 
     public int PlayerPowerLevel
