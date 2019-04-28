@@ -7,13 +7,18 @@ public class PointerMaster : MonoBehaviour
     public LayerMask floorLayer;
 
     private LineRenderer _lineRenderer;
-    [SerializeField] private TextMeshProUGUI _mousePositionText;
+    public SpriteRenderer spriteRenderer;
+    [SerializeField] private TextMeshProUGUI _mousePositionText; // it is being used silly unity
     private Vector2 _mousePosition;
     private GameObject _objUnderPoint;
+    
+    public Sprite[] cursors;
 
     private void Awake()
     {
         _lineRenderer = GetComponent<LineRenderer>();
+        spriteRenderer.sprite = cursors[0];
+        Cursor.visible = false;
     }
 
     public Vector2 FloorUnderFoot(Transform pos)
@@ -29,16 +34,19 @@ public class PointerMaster : MonoBehaviour
         pos = Camera.main.ScreenToWorldPoint(pos);
         transform.position = pos;
 
-        ObjectUnderPointer();
 
         if (FindObjectOfType<PlayerFlight>().enabled == false)
         {
             DisplayFloorLine(transform.position, GetFloorPoint(transform.position));
+            spriteRenderer.sprite = cursors[0];
         }
         else
         {
-            DisplayFloorLine(transform.position, FindObjectOfType<PlayerFlight>().transform.position);                    
+            DisplayFloorLine(transform.position, FindObjectOfType<PlayerFlight>().transform.position); 
+            spriteRenderer.sprite = cursors[1];
         }
+        
+        ObjectUnderPointer();
     }
 
     private void ObjectUnderPointer()
@@ -51,7 +59,13 @@ public class PointerMaster : MonoBehaviour
             foreach (Collider2D hit in hits)
             {
                 _objUnderPoint = hit.gameObject;
-                _mousePositionText.text = hit.name;
+
+                var x = hit.GetComponent<Interactable>();
+                if (x != null)
+                {
+                    _mousePositionText.text = hit.name;
+                    spriteRenderer.sprite = cursors[1];                    
+                }
             }
         }
         
@@ -67,12 +81,19 @@ public class PointerMaster : MonoBehaviour
         Vector3[] positions = new Vector3[2];
         positions[0] = _startingPoint;
         positions[1] = _floorPoint;
+
+        if (_floorPoint == Vector3.zero || _startingPoint == Vector3.zero)
+        {
+            _lineRenderer.enabled = false;
+        }
+        else
+        {
+            _lineRenderer.enabled = true;
+        }
         
         _lineRenderer.SetPositions(positions);
         _lineRenderer.startWidth = 0.05f;
 
-        _lineRenderer.enabled = _startingPoint != _floorPoint;
-        _lineRenderer.enabled = _startingPoint != Vector3.zero;
     }
 
     public Vector3 GetFloorPoint(Vector3 _startingPoint)
