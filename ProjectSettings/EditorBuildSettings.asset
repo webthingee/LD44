@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Game/Scenes/Click-N-Move.unity
-    guid: 99b1996e20fce409885dc543ca008766
+    path: Assets/_Game/Scenes/Level_001.unity
+    guid: c2329a9c123ab4e1cabefc314080dc6f
   - enabled: 1
     path: Assets/FMOD_UI/fmodAudioTest.unity
     guid: 8453c664e795f4393ad947208ebbbdbd
