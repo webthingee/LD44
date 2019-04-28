@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Game/Scenes/MainMenu.unity
+    guid: 63be099143c0c8b40baf00f1f1ec92c6
+  - enabled: 1
     path: Assets/_Game/Scenes/Click-N-Move.unity
     guid: 99b1996e20fce409885dc543ca008766
   - enabled: 1
