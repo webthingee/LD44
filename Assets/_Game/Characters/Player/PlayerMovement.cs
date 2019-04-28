@@ -1,7 +1,7 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using MyEvents;
 using Prime31;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,10 +10,9 @@ public class PlayerMovement : MonoBehaviour
 	public float runSpeed = 8f;
 	public float groundDamping = 20f; // how fast do we change direction? higher means faster
 	public float inAirDamping = 5f;
-	public float jumpHeight = 3f;
 	
 	private Vector2 floorPoint;
-	private Vector2 gotoFloorPoint;
+	public Vector2 gotoFloorPoint;
 
 	[HideInInspector]
 	private float normalizedHorizontalSpeed = 0;
@@ -38,6 +37,11 @@ public class PlayerMovement : MonoBehaviour
 		FloorPointEvent.RegisterListener(OnFloorPointEvent);
 	}
 
+	private void Start()
+	{
+		gotoFloorPoint = FindObjectOfType<PointerMaster>().FloorUnderFoot(transform);
+	}
+
 	#region Event Listeners
 
 	void onControllerCollider( RaycastHit2D hit )
@@ -53,23 +57,31 @@ public class PlayerMovement : MonoBehaviour
 
 	void onTriggerEnterEvent( Collider2D col )
 	{
-		Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
+//		Debug.Log( "onTriggerEnterEvent: " + col.gameObject.name );
+//		if (col.CompareTag("Lift"))
+//		{
+//			transform.parent = col.transform.parent.parent.transform;
+//		}
 	}
 
 
 	void onTriggerExitEvent( Collider2D col )
 	{
-		Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
+//		Debug.Log( "onTriggerExitEvent: " + col.gameObject.name );
+//		if (col.CompareTag("Lift"))
+//		{
+//			transform.parent = null;
+//		}
 	}
 
 	#endregion
-
 
 	// the Update loop contains a very simple example of moving the character around and controlling the animation
 	void Update()
 	{		
 		if (Input.GetMouseButtonUp(0))
-		{
+		{			
+			if (EventSystem.current.IsPointerOverGameObject()) return;
 			if (floorPoint != null) gotoFloorPoint = floorPoint;
 		}
 
@@ -80,8 +92,6 @@ public class PlayerMovement : MonoBehaviour
 			
 		if (Mathf.Abs(transform.position.x - gotoFloorPoint.x) > 0.3f)
 		{
-
-
 			if (transform.position.x - gotoFloorPoint.x > 0.2f)
 			{
 				normalizedHorizontalSpeed = -1;
@@ -102,7 +112,6 @@ public class PlayerMovement : MonoBehaviour
 		else
 		{
 			normalizedHorizontalSpeed = 0;
-			Debug.Log("no speed" + _velocity.y);
 		}
 
 		// apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
@@ -112,11 +121,10 @@ public class PlayerMovement : MonoBehaviour
 		// apply gravity before moving
 		_velocity.y += gravity * Time.deltaTime;
 
+		// over write vertical velocity
 		if (normalizedHorizontalSpeed == 0) _velocity.y = 0;
 		
 		_controller.move( _velocity * Time.deltaTime );
-
-		Debug.Log(_velocity.y);
 
 		// grab our current _velocity to use as a base for all calculations
 		_velocity = _controller.velocity;
