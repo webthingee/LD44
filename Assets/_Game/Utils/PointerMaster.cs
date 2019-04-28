@@ -31,7 +31,14 @@ public class PointerMaster : MonoBehaviour
 
         ObjectUnderPointer();
 
-        DisplayFloorLine(transform.position, GetFloorPoint(transform.position));
+        if (FindObjectOfType<PlayerFlight>().enabled == false)
+        {
+            DisplayFloorLine(transform.position, GetFloorPoint(transform.position));
+        }
+        else
+        {
+            DisplayFloorLine(transform.position, FindObjectOfType<PlayerFlight>().transform.position);                    
+        }
     }
 
     private void ObjectUnderPointer()
