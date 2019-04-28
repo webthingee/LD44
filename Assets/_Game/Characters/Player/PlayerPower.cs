@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerPower : MonoBehaviour
 {
     public int playerPowerLevel;
-    public TextMeshProUGUI powerText; // @TODO need to move outside
+    //public TextMeshProUGUI powerText; // @TODO need to move outside
     public Slider powerLevelSlider;
 
     private void Start()
@@ -17,7 +17,7 @@ public class PlayerPower : MonoBehaviour
     {
         get
         {
-            powerText.text = playerPowerLevel.ToString();
+            //powerText.text = playerPowerLevel.ToString();
             powerLevelSlider.value = playerPowerLevel;
 
             return playerPowerLevel;
@@ -26,7 +26,7 @@ public class PlayerPower : MonoBehaviour
         {
             playerPowerLevel = value;
             
-            powerText.text = playerPowerLevel.ToString();
+            //powerText.text = playerPowerLevel.ToString();
             powerLevelSlider.value = playerPowerLevel;
 
         }

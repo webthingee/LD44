@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class DialogMaster : MonoBehaviour
 {
     public GameObject dialogPanel;
     public TextMeshProUGUI dialogText;
-    public Button dialogNext;
 
     public bool showNext;
 
     public IEnumerator Say(string say)
     {
         OpenDialog();
+        
         dialogText.text = say;
 
         while (!showNext)
@@ -34,11 +33,12 @@ public class DialogMaster : MonoBehaviour
     public void NextDialog()
     {
         showNext = true;
+        dialogPanel.SetActive(false);
     }
     
     public void CloseDialog()
     {
         showNext = true;
-        dialogPanel.SetActive(!dialogPanel.activeSelf);
+        dialogPanel.SetActive(false);
     }
 }
