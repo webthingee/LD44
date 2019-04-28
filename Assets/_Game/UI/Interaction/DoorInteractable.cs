@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using MyEvents;
 using UnityEngine;
 
 public class DoorInteractable : Interactable
@@ -33,15 +34,34 @@ public class DoorInteractable : Interactable
     public IEnumerator StartCutScene()
     {
         Debug.Log("Playing Cutscene...");
-        yield return new WaitForSeconds(1f);
+        
+        CutSceneInfo OnStartCutScene = new CutSceneInfo
+        {
+            description = "This a cut scene from the Door", 
+            obj = gameObject,
+            cutSceneName = "Door"
+        };
+        OnStartCutScene.FireEvent();
+        
+        cutSceneInProgress = true;
+
+        yield return new WaitForSeconds(0.25f);
+        
+        Camera.main.transform.position = new Vector3(20f, -4.2f, -10f);
         FindObjectOfType<PlayerPower>().transform.position = otherDoor.transform.position;
         FindObjectOfType<PlayerMovement>().gotoFloorPoint = otherDoor.transform.position;
-        yield return new WaitForSeconds(1f);
-        ReturnFromCutScene();
+
+        while (cutSceneInProgress)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+        
+        yield return new WaitForSeconds(0.1f);
+        
+        //ReturnFromCutScene();
     }
     
     public void ReturnFromCutScene()
     {
-        Camera.main.transform.position = new Vector3(20f, -4.2f, -10f);
     }
 }

@@ -31,7 +31,7 @@ public class HatchInteractable : Interactable
         
         CutSceneInfo OnStartCutScene = new CutSceneInfo
         {
-            description = "This a cut scene from " + gameObject.name, 
+            description = "This a cut scene from the Hatch", 
             obj = gameObject,
             cutSceneName = "Hatch"
         };

@@ -53,6 +53,7 @@ public class Interactable : MonoBehaviour
     private void StartUsingInteractable()
     {
 		Debug.Log("Start Using");
+        FindObjectOfType<PlayerMovement>().gotoFloorPoint = FindObjectOfType<PlayerMovement>().transform.position;
         PowerLevelCheck();
     }
 
