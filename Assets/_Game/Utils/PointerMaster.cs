@@ -18,7 +18,7 @@ public class PointerMaster : MonoBehaviour
     {
         _lineRenderer = GetComponent<LineRenderer>();
         spriteRenderer.sprite = cursors[0];
-        Cursor.visible = false;
+        //Cursor.visible = false;
     }
 
     public Vector2 FloorUnderFoot(Transform pos)
