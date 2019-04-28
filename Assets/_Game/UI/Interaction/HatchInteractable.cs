@@ -27,6 +27,10 @@ public class HatchInteractable : Interactable
 
     public IEnumerator StartCutScene()
     {
+
+        yield return StartCoroutine(FindObjectOfType<DialogMaster>().Say("What's This?... An Underground Passage?"));
+        FindObjectOfType<DialogMaster>().CloseDialog();
+        
         Debug.Log("Playing Cutscene...");
         
         CutSceneInfo OnStartCutScene = new CutSceneInfo
@@ -47,11 +51,11 @@ public class HatchInteractable : Interactable
 
         while (cutSceneInProgress)
         {
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
         }
         
-        yield return new WaitForSeconds(0.1f);
-
+        yield return StartCoroutine(FindObjectOfType<DialogMaster>().Say("This lift looks dead \n Maybe I can charge it"));
+        FindObjectOfType<DialogMaster>().CloseDialog();
         //ReturnFromCutScene();
     }
 
