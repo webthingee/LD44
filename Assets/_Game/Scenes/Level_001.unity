@@ -275,6 +275,7 @@ MonoBehaviour:
   wasSaid: 0
   stopPlayer: 1
   isSpeaking: 0
+  songChange: 999
   dm: {fileID: 0}
 --- !u!61 &564983810
 BoxCollider2D:
@@ -356,35 +357,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1390595629}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &673590996 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2952493333961420263, guid: 5e532a0df597a4103be951669bd824b2,
-    type: 3}
-  m_PrefabInstance: {fileID: 473108918}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &673590998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 673590996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Event: event:/MUSIC/IceyArp
-  PlayEvent: 1
-  StopEvent: 2
-  CollisionTag: 
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
 --- !u!4 &673590999 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2952493333961420262, guid: 5e532a0df597a4103be951669bd824b2,
@@ -444,6 +416,7 @@ MonoBehaviour:
   wasSaid: 0
   stopPlayer: 0
   isSpeaking: 0
+  songChange: 1
   dm: {fileID: 0}
 --- !u!61 &685788270
 BoxCollider2D:
@@ -623,6 +596,7 @@ MonoBehaviour:
   wasSaid: 0
   stopPlayer: 0
   charNum: 1
+  songChange: 999
   dm: {fileID: 0}
 --- !u!61 &790187971
 BoxCollider2D:
@@ -879,6 +853,7 @@ MonoBehaviour:
   wasSaid: 0
   stopPlayer: 0
   charNum: 2
+  songChange: 999
   dm: {fileID: 0}
 --- !u!61 &875991516
 BoxCollider2D:
@@ -991,6 +966,7 @@ MonoBehaviour:
   wasSaid: 0
   stopPlayer: 0
   charNum: 1
+  songChange: 999
   dm: {fileID: 0}
 --- !u!61 &913791326
 BoxCollider2D:
@@ -1701,6 +1677,7 @@ MonoBehaviour:
   wasSaid: 0
   stopPlayer: 0
   charNum: 1
+  songChange: 999
   dm: {fileID: 0}
 --- !u!61 &1131174167
 BoxCollider2D:
@@ -1805,12 +1782,12 @@ PrefabInstance:
     - target: {fileID: 5318004561713135370, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.44
+      value: -30.3
       objectReference: {fileID: 0}
     - target: {fileID: 5318004561713135370, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.05
+      value: 9.3
       objectReference: {fileID: 0}
     - target: {fileID: 5318004561713135370, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
@@ -2146,6 +2123,7 @@ MonoBehaviour:
   wasSaid: 0
   stopPlayer: 1
   charNum: 1
+  songChange: 999
   dm: {fileID: 0}
 --- !u!61 &1246033992
 BoxCollider2D:
@@ -2334,6 +2312,7 @@ MonoBehaviour:
   wasSaid: 0
   stopPlayer: 0
   charNum: 1
+  songChange: 999
   dm: {fileID: 0}
 --- !u!61 &1294591813
 BoxCollider2D:
@@ -2671,7 +2650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478455601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.25, y: -5.94, z: -10}
+  m_LocalPosition: {x: -20.2, y: 11, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3663,6 +3642,7 @@ MonoBehaviour:
   wasSaid: 0
   stopPlayer: 0
   charNum: 1
+  songChange: 2
   dm: {fileID: 0}
 --- !u!61 &1893490191
 BoxCollider2D:

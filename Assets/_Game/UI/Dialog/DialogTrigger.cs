@@ -8,6 +8,8 @@ public class DialogTrigger : MonoBehaviour
     public bool wasSaid;
     public bool stopPlayer;
     public int charNum = 1;
+    public float songChange = 999;
+
 
     public DialogMaster dm;
     
@@ -38,6 +40,8 @@ public class DialogTrigger : MonoBehaviour
         if (wasSaid) return;
         
         StartCoroutine(Say());
+        
+        if (songChange < 12) FindObjectOfType<MainMusic>().songSelectionValue = songChange;
         
         if (stopPlayer)
         {
