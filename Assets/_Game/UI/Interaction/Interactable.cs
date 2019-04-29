@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FMODUnity;
+using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Interactable : MonoBehaviour
     [SerializeField] public bool inProgress;
     
     public bool cutSceneInProgress;
+    
+    [EventRef] public string soundEffect;
+//    private FMOD.Studio.EventInstance mainMusicEvent;
 
     public bool InUse
     {

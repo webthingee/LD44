@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using FMODUnity;
 using MyEvents;
 using UnityEngine;
 
@@ -10,7 +11,9 @@ public class HatchInteractable : Interactable
     public GameObject[] hideThese;
     public GameObject[] showThese;
     
-    //@TODO pause mouse input
+    [EventRef] public string soundEffect2;
+    
+    //@TODO pause mouse input?
     
     protected override void PowerLevelCheck()
     {
@@ -20,6 +23,11 @@ public class HatchInteractable : Interactable
             inProgress = false;
             isUnlocked = true;
             FindObjectOfType<PlayerPower>().PlayerPowerLevel -= powerReqiured;
+
+            if (soundEffect != null)
+            {
+                RuntimeManager.PlayOneShotAttached(soundEffect, gameObject);
+            }
             
             GetComponent<SpriteRenderer>().color = Color.green;
             door.GetComponent<SpriteRenderer>().color = Color.green;
@@ -46,9 +54,17 @@ public class HatchInteractable : Interactable
         
         cutSceneInProgress = true;
         
+        yield return new WaitForSeconds(4f);
+        
+        Camera.main.transform.position = Vector3.back * 10;
+        
+        if (soundEffect2 != null)
+        {
+            RuntimeManager.PlayOneShotAttached(soundEffect2, gameObject);
+        }
+        
         yield return new WaitForSeconds(0.5f);
 
-        Camera.main.transform.position = Vector3.back * 10;
         FindObjectOfType<PlayerPower>().transform.position = destination.transform.position;
         FindObjectOfType<PlayerMovement>().gotoFloorPoint = destination.transform.position;
 
@@ -66,7 +82,7 @@ public class HatchInteractable : Interactable
         {
             yield return new WaitForSeconds(0.5f);
         }
-        
+
         //yield return StartCoroutine(FindObjectOfType<DialogMaster>().Say("This lift looks dead \n Maybe I can charge it"));
         //FindObjectOfType<DialogMaster>().CloseDialog();
         //ReturnFromCutScene();
