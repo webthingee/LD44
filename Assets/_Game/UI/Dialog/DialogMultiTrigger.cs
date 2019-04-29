@@ -43,7 +43,6 @@ public class DialogMultiTrigger : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("t");
         dm.CloseDialog();
         
         if (wasSaid) return;

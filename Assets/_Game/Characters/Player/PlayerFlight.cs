@@ -52,8 +52,6 @@ public class PlayerFlight : MonoBehaviour
         {
             FindObjectOfType<PlayerPower>().PlayerPowerLevel -= 1;
 
-            Debug.Log(FindObjectOfType<PlayerPower>().PlayerPowerLevel);
-
             if (FindObjectOfType<PlayerPower>().PlayerPowerLevel <= 0)
             {
                 Debug.Log("End Of Game");

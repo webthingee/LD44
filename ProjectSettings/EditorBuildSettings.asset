@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/_Game/Scenes/MainMenu.unity
     guid: 63be099143c0c8b40baf00f1f1ec92c6
   - enabled: 1
-    path: Assets/_Game/Scenes/Click-N-Move.unity
-    guid: 99b1996e20fce409885dc543ca008766
-  - enabled: 1
-    path: Assets/FMOD_UI/fmodAudioTest.unity
-    guid: 8453c664e795f4393ad947208ebbbdbd
+    path: Assets/_Game/Scenes/Level_001.unity
+    guid: c2329a9c123ab4e1cabefc314080dc6f
   m_configObjects: {}
