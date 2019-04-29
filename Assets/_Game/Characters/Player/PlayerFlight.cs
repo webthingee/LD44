@@ -58,7 +58,7 @@ public class PlayerFlight : MonoBehaviour
                 
                 CutSceneInfo OnStartCutScene = new CutSceneInfo
                 {
-                    description = "This a cut scene for Death", 
+                    description = "", 
                     obj = gameObject,
                     cutSceneName = "Death"
                 };
