@@ -34,13 +34,13 @@ public class PlayerFlight : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, moveToPoint, 2f * Time.deltaTime);
         }
 
-        if (transform.position.y >= -3f)
+        if (transform.position.y >= -2f)
         {
             Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 0, -10f);
         }
         //@todo needs fallback
         
-        if (transform.position.x <= 20f)
+        if (transform.position.x <= 15f)
         {
             Camera.main.transform.position = new Vector3(10f, 0, -10f);
         }

@@ -6,6 +6,8 @@ public class DoorInteractable : Interactable
 {
     public GameObject door;
     public GameObject otherDoor;
+
+    public Interactable setToInProgress;
     
     protected override void PowerLevelCheck()
     {
@@ -17,10 +19,13 @@ public class DoorInteractable : Interactable
                 isUnlocked = true;
                 FindObjectOfType<PlayerPower>().PlayerPowerLevel -= powerReqiured;
 
-            
+                setToInProgress.inProgress = true;
 
-                GetComponent<SpriteRenderer>().color = Color.green;
-                door.GetComponent<SpriteRenderer>().color = Color.green;
+                Color colorChange = Color.green;
+                colorChange.a = 0.11f;
+
+                GetComponent<SpriteRenderer>().color = colorChange;
+                door.GetComponent<SpriteRenderer>().color = colorChange;
 
                 door.GetComponent<DoorInteractable>().canUse = true;
             }

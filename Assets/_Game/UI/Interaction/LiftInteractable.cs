@@ -20,7 +20,11 @@ public class LiftInteractable : Interactable
                     RuntimeManager.PlayOneShotAttached(soundEffect, gameObject);
                 }
                 
-                GetComponent<SpriteRenderer>().color = Color.green;
+                Color colorChange = Color.green;
+                colorChange.a = 0.11f;
+
+                GetComponent<SpriteRenderer>().color = colorChange;
+                
                 lift.GetComponent<LiftMover>().moveLift = true;
 
                 StartCoroutine(StartCutScene());
