@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Linq;
+using MyEvents;
 using UnityEngine;
 
 public class PlayerFlight : MonoBehaviour
@@ -54,6 +55,15 @@ public class PlayerFlight : MonoBehaviour
 
             if (FindObjectOfType<PlayerPower>().PlayerPowerLevel <= 0)
             {
+                
+                CutSceneInfo OnStartCutScene = new CutSceneInfo
+                {
+                    description = "This a cut scene for Death", 
+                    obj = gameObject,
+                    cutSceneName = "Death"
+                };
+                OnStartCutScene.FireEvent();
+                
                 Debug.Log("End Of Game");
                 this.enabled = false;
                 inFlight = false;

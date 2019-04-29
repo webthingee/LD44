@@ -1805,12 +1805,12 @@ PrefabInstance:
     - target: {fileID: 5318004561713135370, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.7
+      value: 29.44
       objectReference: {fileID: 0}
     - target: {fileID: 5318004561713135370, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.8
+      value: -11.05
       objectReference: {fileID: 0}
     - target: {fileID: 5318004561713135370, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
@@ -2671,7 +2671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478455601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.7, y: 12.9, z: -10}
+  m_LocalPosition: {x: 26.25, y: -5.94, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3094,11 +3094,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cut Scene Master
       objectReference: {fileID: 0}
-    - target: {fileID: 3271540473699415086, guid: 2403072ec44684a36a2bcde42866115c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3271540473699415072, guid: 2403072ec44684a36a2bcde42866115c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3152,6 +3147,21 @@ PrefabInstance:
     - target: {fileID: 3271540473699415072, guid: 2403072ec44684a36a2bcde42866115c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271540473327714076, guid: 2403072ec44684a36a2bcde42866115c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271540474366819191, guid: 2403072ec44684a36a2bcde42866115c,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3271540473188774905, guid: 2403072ec44684a36a2bcde42866115c,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
