@@ -37,9 +37,10 @@ public class DoorInteractable : Interactable
         
         CutSceneInfo OnStartCutScene = new CutSceneInfo
         {
-            description = "This a cut scene from the Door", 
+            description = "Scanning ... Scanning ... I detect weapons. \n Maybe I can blast the door open.", 
             obj = gameObject,
-            cutSceneName = "Door"
+            cutSceneName = "Door",
+            cutSceneNumber = 2
         };
         OnStartCutScene.FireEvent();
         

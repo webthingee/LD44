@@ -46,9 +46,10 @@ public class HatchInteractable : Interactable
         
         CutSceneInfo OnStartCutScene = new CutSceneInfo
         {
-            description = "This a cut scene from the Hatch", 
+            description = "The hatch led to an elevator. \n I wonder how deep underground it goes.", 
             obj = gameObject,
-            cutSceneName = "Hatch"
+            cutSceneName = "Hatch",
+            cutSceneNumber = 1
         };
         OnStartCutScene.FireEvent();
         
