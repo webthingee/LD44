@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using FMODUnity;
 using UnityEngine;
 
 public class LiftInteractable : Interactable
@@ -13,6 +14,11 @@ public class LiftInteractable : Interactable
                 inProgress = false;
                 isUnlocked = true;
                 FindObjectOfType<PlayerPower>().PlayerPowerLevel -= powerReqiured;
+                
+                if (soundEffect != null)
+                {
+                    RuntimeManager.PlayOneShotAttached(soundEffect, gameObject);
+                }
                 
                 GetComponent<SpriteRenderer>().color = Color.green;
                 lift.GetComponent<LiftMover>().moveLift = true;

@@ -10,6 +10,8 @@ public class DialogMultiTrigger : MonoBehaviour
     public bool stopPlayer;
     public bool isSpeaking;
 
+    public float songChange = 999;
+
     public DialogMaster dm;
     
     private void Start()
@@ -53,6 +55,8 @@ public class DialogMultiTrigger : MonoBehaviour
         }
         
         isSpeaking = true;
+
+        if (songChange < 12) FindObjectOfType<MainMusic>().songSelectionValue = songChange;
 
         StartCoroutine(Say());
 

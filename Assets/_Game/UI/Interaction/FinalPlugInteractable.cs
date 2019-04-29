@@ -31,9 +31,10 @@ public class FinalPlugInteractable : Interactable
         
         CutSceneInfo OnStartCutScene = new CutSceneInfo
         {
-            description = "This a cut scene from the Charging Room", 
+            description = "", 
             obj = gameObject,
-            cutSceneName = "Charging Room"
+            cutSceneName = "Charging Room",
+            cutSceneNumber = 3
         };
         OnStartCutScene.FireEvent();
         

@@ -48,6 +48,7 @@ namespace MyEvents
     {
         public GameObject obj;
         public string cutSceneName;
+        public int cutSceneNumber;
     }
     
     //Examples
