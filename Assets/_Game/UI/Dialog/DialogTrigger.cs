@@ -7,6 +7,7 @@ public class DialogTrigger : MonoBehaviour
     [TextArea] public string dialog;
     public bool wasSaid;
     public bool stopPlayer;
+    public int charNum = 1;
 
     public DialogMaster dm;
     
@@ -25,7 +26,7 @@ public class DialogTrigger : MonoBehaviour
             v.isSpeaking = false;
         }
         
-        yield return StartCoroutine(dm.Say(dialog));
+        yield return StartCoroutine(dm.Say(dialog, charNum));
         
         dm.CloseDialog();
     }

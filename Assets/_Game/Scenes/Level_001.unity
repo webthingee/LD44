@@ -239,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 564983807}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 24.06, y: -11.02, z: 0}
+  m_LocalPosition: {x: 25.7, y: -11.02, z: 0}
   m_LocalScale: {x: 1.8095316, y: 0.43155274, z: 1}
   m_Children: []
   m_Father: {fileID: 1505471090}
@@ -258,12 +258,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialog:
-  - '23 43 2i3 42y3 i23y4 '
-  - qwere wqfd a fsaf dsfdsafdsa
-  - -=.,-.=,-.=-,.=,-.=
-  characterNum: 010000000200000001000000
+  - "Oh! I didn\u2019t know anyone was down here. I am LB-KT. Who are you, little
+    three-prong?"
+  - "\u201CKa-tie\u201D \u2026 I am LB-ZD. \u201CZed\u201D is an option for brevity.
+    I work for BP."
+  - 'How long was I out, is my break over? I have to get back to work! '
+  - "My records are showing that your employer shut down in 2020\u2026"
+  - '*beep*!'
+  - "\u2026 How about you and I get out of here?"
+  - 'Correction: must refill battery first.'
+  - I wish I could help, but my battery is low too. Sincerest Apologies.
+  - Maybe if we combine battery power?
+  - "Processing \u2026"
+  - Do you have USB-C?
+  characterNum: 0100000002000000020000000100000002000000010000000100000002000000010000000100000001000000
   wasSaid: 0
-  stopPlayer: 0
+  stopPlayer: 1
   isSpeaking: 0
   dm: {fileID: 0}
 --- !u!61 &564983810
@@ -428,8 +438,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialog:
   - Where the *beep* am I ?
+  - 'I need a charging station! '
   - My apps are a huge battery drain.
-  characterNum: 0100000001000000
+  characterNum: 010000000100000001000000
   wasSaid: 0
   stopPlayer: 0
   isSpeaking: 0
@@ -608,9 +619,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e7d5c783d974db492767891836009a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: "Almost out of battery! \n need to conserve power and zap wisely."
+  dialog: Gotta try to conserve power and zap wisely.
   wasSaid: 0
   stopPlayer: 0
+  charNum: 1
   dm: {fileID: 0}
 --- !u!61 &790187971
 BoxCollider2D:
@@ -700,6 +712,12 @@ Transform:
   m_Father: {fileID: 1505471090}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &816365484 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 554352966976118150, guid: 070c5899eab2a40f0ad32a5aa2839bf0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1211119516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &871078499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4245613515079947443, guid: e2ec6c8ddbb6e459ca861edb240e2f1a,
@@ -860,6 +878,7 @@ MonoBehaviour:
   dialog: That looks familiar
   wasSaid: 0
   stopPlayer: 0
+  charNum: 2
   dm: {fileID: 0}
 --- !u!61 &875991516
 BoxCollider2D:
@@ -966,9 +985,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e7d5c783d974db492767891836009a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: "I\u2019m losing power!\nAnd the *beep*ing elevator just broke! "
+  dialog: 'That took more power than I expected.
+
+    And the *beep*ing elevator just broke! '
   wasSaid: 0
   stopPlayer: 0
+  charNum: 1
   dm: {fileID: 0}
 --- !u!61 &913791326
 BoxCollider2D:
@@ -1678,6 +1700,7 @@ MonoBehaviour:
     Now how am I going to get back up? '
   wasSaid: 0
   stopPlayer: 0
+  charNum: 1
   dm: {fileID: 0}
 --- !u!61 &1131174167
 BoxCollider2D:
@@ -1782,12 +1805,12 @@ PrefabInstance:
     - target: {fileID: 5318004561713135370, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.58
+      value: -30.7
       objectReference: {fileID: 0}
     - target: {fileID: 5318004561713135370, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.06
+      value: 8.8
       objectReference: {fileID: 0}
     - target: {fileID: 5318004561713135370, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
@@ -1869,16 +1892,21 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 871078499}
+    - target: {fileID: 5318004561713135360, guid: 1390f706b008346d4bc64d53a9744473,
+        type: 3}
+      propertyPath: inFlight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5318004563587996747, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 5318004563114113612, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 26bf1ebf6599644d3b6519080812f9dd,
+      objectReference: {fileID: 21300000, guid: f910702cdc0a340c49d6a71ccacc7d26,
         type: 3}
     - target: {fileID: 5318004562419299506, guid: 1390f706b008346d4bc64d53a9744473,
         type: 3}
@@ -1913,7 +1941,7 @@ PrefabInstance:
     - target: {fileID: 554352968457713581, guid: 070c5899eab2a40f0ad32a5aa2839bf0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.49
+      value: -10.63
       objectReference: {fileID: 0}
     - target: {fileID: 554352968457713581, guid: 070c5899eab2a40f0ad32a5aa2839bf0,
         type: 3}
@@ -1986,6 +2014,22 @@ PrefabInstance:
       propertyPath: flightCollider
       value: 
       objectReference: {fileID: 1084534546}
+    - target: {fileID: 554352968588227330, guid: 070c5899eab2a40f0ad32a5aa2839bf0,
+        type: 3}
+      propertyPath: combined
+      value: 
+      objectReference: {fileID: 21300000, guid: e2e2127e6873241dfa0b8a619427618a,
+        type: 3}
+    - target: {fileID: 554352968588227330, guid: 070c5899eab2a40f0ad32a5aa2839bf0,
+        type: 3}
+      propertyPath: powerReqiured
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 554352968588227330, guid: 070c5899eab2a40f0ad32a5aa2839bf0,
+        type: 3}
+      propertyPath: hideMe
+      value: 
+      objectReference: {fileID: 816365484}
     - target: {fileID: 554352966866102990, guid: 070c5899eab2a40f0ad32a5aa2839bf0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2101,6 +2145,7 @@ MonoBehaviour:
   dialog: "What\u2019s that up there? It looks like a charging room\u2026 "
   wasSaid: 0
   stopPlayer: 1
+  charNum: 1
   dm: {fileID: 0}
 --- !u!61 &1246033992
 BoxCollider2D:
@@ -2288,6 +2333,7 @@ MonoBehaviour:
     An underground passage behind these bushes?'
   wasSaid: 0
   stopPlayer: 0
+  charNum: 1
   dm: {fileID: 0}
 --- !u!61 &1294591813
 BoxCollider2D:
@@ -2381,6 +2427,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435089108459899253, guid: 95d9f370d43374e20b5c87d58c3ddeb2,
+        type: 3}
+      propertyPath: m_Name
+      value: Key Pad
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95d9f370d43374e20b5c87d58c3ddeb2, type: 3}
@@ -2535,6 +2586,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 588505215}
+    - target: {fileID: 5240235020750000088, guid: 0f4ea02af91b04625a4cb0c6d4228d3b,
+        type: 3}
+      propertyPath: m_Name
+      value: Lift Control
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f4ea02af91b04625a4cb0c6d4228d3b, type: 3}
 --- !u!1 &1478455601
@@ -2615,7 +2671,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1478455601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.59, y: 12.02, z: -10}
+  m_LocalPosition: {x: -20.7, y: 12.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2989,6 +3045,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1332635959461010722, guid: b8903fd82a49d4cb1a6a91ebd322c097,
+        type: 3}
+      propertyPath: m_Name
+      value: Mysterious Hatch
+      objectReference: {fileID: 0}
     - target: {fileID: 1332635959461010732, guid: b8903fd82a49d4cb1a6a91ebd322c097,
         type: 3}
       propertyPath: hideThese.Array.size
@@ -3009,6 +3070,16 @@ PrefabInstance:
       propertyPath: showThese.Array.data[0]
       value: 
       objectReference: {fileID: 1542881855}
+    - target: {fileID: 1332635960248091944, guid: b8903fd82a49d4cb1a6a91ebd322c097,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.25199413
+      objectReference: {fileID: 0}
+    - target: {fileID: 1332635960248091944, guid: b8903fd82a49d4cb1a6a91ebd322c097,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.0345058
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8903fd82a49d4cb1a6a91ebd322c097, type: 3}
 --- !u!1001 &1738071654
@@ -3538,6 +3609,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.176
       objectReference: {fileID: 0}
+    - target: {fileID: 5014698308116079686, guid: 8f1460a09fd044de1a7c3d3b04eeec09,
+        type: 3}
+      propertyPath: m_Name
+      value: Lift Control
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f1460a09fd044de1a7c3d3b04eeec09, type: 3}
 --- !u!1 &1893490189
@@ -3571,11 +3647,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e7d5c783d974db492767891836009a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog: 'This lift just ran out of power.
+  dialog: 'This lift needs to be repowered.
 
     Maybe I can charge it...'
   wasSaid: 0
   stopPlayer: 0
+  charNum: 1
   dm: {fileID: 0}
 --- !u!61 &1893490191
 BoxCollider2D:
@@ -3823,7 +3900,7 @@ PrefabInstance:
     - target: {fileID: 4030874452201782366, guid: 7cf723e1616e847df96d699d0fffe141,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4030874452201782367, guid: 7cf723e1616e847df96d699d0fffe141,
         type: 3}
