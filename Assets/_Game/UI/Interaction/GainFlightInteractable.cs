@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using FMODUnity;
 using UnityEngine;
 
 public class GainFlightInteractable : Interactable
@@ -14,6 +15,11 @@ public class GainFlightInteractable : Interactable
         {
             inProgress = false;
             isUnlocked = true;
+            
+            if (soundEffect != null)
+            {
+                RuntimeManager.PlayOneShotAttached(soundEffect, gameObject);
+            }
 
             GameObject.FindWithTag("Player").GetComponent<Rigidbody2D>().gravityScale = 0;
             GameObject.FindWithTag("Player").GetComponent<BoxCollider2D>().offset = new Vector2(0f, 0.6f);

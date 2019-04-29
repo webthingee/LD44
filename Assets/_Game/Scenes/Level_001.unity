@@ -1390,6 +1390,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6815819505964300893, guid: 8f0b593223ee5449489fc94182f030c8,
+        type: 3}
+      propertyPath: soundEffect
+      value: event:/SFX/Zap
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f0b593223ee5449489fc94182f030c8, type: 3}
 --- !u!1 &790187969
@@ -2115,6 +2120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 3355175001065413337, guid: 873cf61a3b4cd4e7f857aec299914785,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3355175001065413341, guid: 873cf61a3b4cd4e7f857aec299914785,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2298,6 +2308,21 @@ PrefabInstance:
     - target: {fileID: 3840256971474479951, guid: 873cf61a3b4cd4e7f857aec299914785,
         type: 3}
       propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190289119078859191, guid: 873cf61a3b4cd4e7f857aec299914785,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190289119078859191, guid: 873cf61a3b4cd4e7f857aec299914785,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7190289119078859191, guid: 873cf61a3b4cd4e7f857aec299914785,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1869749642, guid: 873cf61a3b4cd4e7f857aec299914785, type: 3}
@@ -2854,6 +2879,11 @@ PrefabInstance:
       propertyPath: hideMe
       value: 
       objectReference: {fileID: 816365484}
+    - target: {fileID: 554352968588227330, guid: 070c5899eab2a40f0ad32a5aa2839bf0,
+        type: 3}
+      propertyPath: soundEffect
+      value: event:/SFX/Bot_Positive
+      objectReference: {fileID: 0}
     - target: {fileID: 554352966866102990, guid: 070c5899eab2a40f0ad32a5aa2839bf0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2971,22 +3001,32 @@ PrefabInstance:
     - target: {fileID: 8017741040804121617, guid: 7e8f011cb1e0046afb522bdb915711c7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.591
+      value: -0.6864
       objectReference: {fileID: 0}
     - target: {fileID: 8017741040804121617, guid: 7e8f011cb1e0046afb522bdb915711c7,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5225
+      value: 1.3315785
       objectReference: {fileID: 0}
     - target: {fileID: 8017741040804121620, guid: 7e8f011cb1e0046afb522bdb915711c7,
         type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8017741041390776730, guid: 7e8f011cb1e0046afb522bdb915711c7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.098
+      objectReference: {fileID: 0}
     - target: {fileID: 8017741041633081119, guid: 7e8f011cb1e0046afb522bdb915711c7,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017741041633081119, guid: 7e8f011cb1e0046afb522bdb915711c7,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.007843138
       objectReference: {fileID: 0}
     - target: {fileID: 8017741041390776731, guid: 7e8f011cb1e0046afb522bdb915711c7,
         type: 3}
@@ -3001,12 +3041,12 @@ PrefabInstance:
     - target: {fileID: 8017741041390776731, guid: 7e8f011cb1e0046afb522bdb915711c7,
         type: 3}
       propertyPath: m_Offset.x
-      value: -0.09339166
+      value: 0.030817151
       objectReference: {fileID: 0}
     - target: {fileID: 8017741041390776731, guid: 7e8f011cb1e0046afb522bdb915711c7,
         type: 3}
       propertyPath: m_Size.x
-      value: 2.3181581
+      value: 2.5665758
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e8f011cb1e0046afb522bdb915711c7, type: 3}
@@ -3414,6 +3454,11 @@ PrefabInstance:
       propertyPath: setToInProgress
       value: 
       objectReference: {fileID: 1063136553}
+    - target: {fileID: 3435089108459899255, guid: 95d9f370d43374e20b5c87d58c3ddeb2,
+        type: 3}
+      propertyPath: soundEffect
+      value: event:/SFX/Zap
+      objectReference: {fileID: 0}
     - target: {fileID: 3435089109570930230, guid: 95d9f370d43374e20b5c87d58c3ddeb2,
         type: 3}
       propertyPath: m_Enabled
@@ -3723,6 +3768,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 3.1563125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5240235020750000090, guid: 0f4ea02af91b04625a4cb0c6d4228d3b,
+        type: 3}
+      propertyPath: soundEffect
+      value: event:/SFX/Elevator_Start
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f4ea02af91b04625a4cb0c6d4228d3b, type: 3}
@@ -5143,6 +5193,11 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 0.76
       objectReference: {fileID: 0}
+    - target: {fileID: 5014698308116079680, guid: 8f1460a09fd044de1a7c3d3b04eeec09,
+        type: 3}
+      propertyPath: soundEffect
+      value: event:/SFX/Elevator_Start
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f1460a09fd044de1a7c3d3b04eeec09, type: 3}
 --- !u!1 &1893490189
@@ -5289,6 +5344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialog Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030874453145035057, guid: 7cf723e1616e847df96d699d0fffe141,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4030874453145035058, guid: 7cf723e1616e847df96d699d0fffe141,
         type: 3}

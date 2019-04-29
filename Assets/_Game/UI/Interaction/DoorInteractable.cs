@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using FMODUnity;
 using MyEvents;
 using UnityEngine;
 
@@ -18,6 +19,12 @@ public class DoorInteractable : Interactable
                 inProgress = false;
                 isUnlocked = true;
                 FindObjectOfType<PlayerPower>().PlayerPowerLevel -= powerReqiured;
+                
+                if (soundEffect != null)
+                {
+                    RuntimeManager.PlayOneShotAttached(soundEffect, gameObject);
+                }
+                
 
                 setToInProgress.inProgress = true;
 
