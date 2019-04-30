@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start() {
         ShowMain();
+        FindObjectOfType<MainMusic>().songSelectionValue = 0;
     }
 
     public void LoadGame() {

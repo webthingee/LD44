@@ -44,6 +44,8 @@ public class CutSceneMaster : MonoBehaviour
         if (cutSceneName == "Charging Room")
         {
             mainMenuButton.gameObject.SetActive(true);
+            FindObjectOfType<MainMusic>().songSelectionValue = 3;
+
             //do nothing? StartCoroutine(PlayingWinCutScene());
         }
         else if (cutSceneName == "Death")

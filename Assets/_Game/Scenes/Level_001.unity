@@ -5490,7 +5490,7 @@ PrefabInstance:
     - target: {fileID: 4030874452201782366, guid: 7cf723e1616e847df96d699d0fffe141,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4030874452201782367, guid: 7cf723e1616e847df96d699d0fffe141,
         type: 3}
@@ -5588,6 +5588,22 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.wordCount
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030874451706942815, guid: 7cf723e1616e847df96d699d0fffe141,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a64fe39e7bdcb4e90ae90ea12b0a9758,
+        type: 3}
+    - target: {fileID: 4030874451706942815, guid: 7cf723e1616e847df96d699d0fffe141,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4030874451674426083, guid: 7cf723e1616e847df96d699d0fffe141,
+        type: 3}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cf723e1616e847df96d699d0fffe141, type: 3}
