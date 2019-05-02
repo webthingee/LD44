@@ -8,6 +8,9 @@ public class MainMenu : MonoBehaviour
     public GameObject MainBG;
     public GameObject OptionsBG;
     public GameObject InstructionsBG;
+    public GameObject audioQuitButton;
+    public GameObject audioBackButton;
+
 
     private void Start() {
         ShowMain();
@@ -32,6 +35,14 @@ public class MainMenu : MonoBehaviour
     public void ShowOptions() {
         MainBG.SetActive(false);
         OptionsBG.SetActive(true);
+        audioQuitButton.SetActive(false);
+        audioBackButton.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        audioQuitButton.SetActive(true);
+        audioBackButton.SetActive(false);    
     }
 
     public void QuitToDesktop() {
